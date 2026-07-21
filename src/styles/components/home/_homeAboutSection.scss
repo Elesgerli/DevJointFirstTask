@@ -1,0 +1,197 @@
+@use "../../mixins/mixin" as *;
+
+.homeAbout {
+
+    padding: 100px 0;
+
+    background: #F8FAFC;
+
+    .homeAboutTitle {
+
+        text-align: center;
+        margin-bottom: 70px;
+        @include text(clamp(2rem, 4vw, 3rem),
+            700,
+            1.2);
+
+        color: #111827;
+
+    }
+
+    .homeAboutWrapper {
+        @include flex(flex,
+            stretch,
+            space-between);
+
+        gap: 50px;
+
+    }
+
+    .homeAboutLeft {
+        flex: 1;
+
+        h3 {
+            color: #1E3A8A;
+            margin-bottom: 18px;
+
+            @include text(2rem,
+                700);
+
+        }
+
+        p {
+            color: #475569;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            max-width: 650px;
+
+        }
+
+    }
+
+    .homeAboutAlert {
+        background: #FEE2E2;
+        border-left: 5px solid #EF4444;
+        padding: 22px;
+        border-radius: 8px;
+        overflow-wrap: anywhere;
+
+        h4 {
+            margin-bottom: 10px;
+            color: #111827;
+
+        }
+
+        a {
+            color: #374151;
+            line-height: 1.8;
+            transition: .3s;
+
+            &:hover {
+
+                color: #2563EB;
+
+            }
+
+        }
+
+    }
+
+    .homeAboutRight {
+
+        flex: 1;
+
+        @include flex;
+
+        gap: 25px;
+
+    }
+
+    .homeAboutCard {
+
+        flex: 1;
+
+        min-height: 180px;
+
+        background: white;
+
+        border-radius: 16px;
+
+        @include flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+
+        transition: .35s;
+
+        &:hover {
+
+            transform: translateY(-8px);
+
+        }
+
+        h3 {
+
+            color: #2563EB;
+
+            @include text(clamp(3rem, 5vw, 4rem),
+                700);
+
+        }
+
+        p {
+
+            color: #475569;
+
+            font-size: 20px;
+
+        }
+
+    }
+
+}
+
+@include respond(desktop) {
+
+    .homeAbout {
+
+        .homeAboutWrapper {
+
+            flex-direction: column;
+
+        }
+
+        .homeAboutRight {
+
+            width: 100%;
+
+        }
+
+    }
+
+}
+
+@include respond(mobile) {
+
+    .homeAbout {
+        padding: 70px 0;
+        .homeAboutTitle {
+
+            margin-bottom: 40px;
+        }
+
+        .homeAboutWrapper {
+            gap: 35px;
+
+        }
+
+        .homeAboutLeft {
+
+            h3 {
+
+                font-size: 1.6rem;
+
+            }
+
+        }
+
+        .homeAboutRight {
+
+            flex-direction: column;
+
+        }
+
+        .homeAboutCard {
+
+            width: 100%;
+
+            min-height: 160px;
+
+        }
+
+    }
+
+}

@@ -377,7 +377,7 @@ button {
   transform: translateY(-3px);
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .homeHero {
     min-height: calc(100vh - 80px);
   }
@@ -385,7 +385,7 @@ button {
     gap: 35px;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .homeHero {
     padding: 60px 0;
   }
@@ -396,7 +396,7 @@ button {
     padding: 18px 42px;
   }
 }
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .homeHero {
     padding: 60px 0;
     min-height: calc(100vh - 70px);
@@ -415,6 +415,128 @@ button {
     max-width: 240px;
     margin-inline: auto;
     padding: 15px;
+  }
+}
+.homeAbout {
+  padding: 100px 0;
+  background: #F8FAFC;
+}
+.homeAbout .homeAboutTitle {
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #111827;
+}
+.homeAbout .homeAboutWrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 50px;
+}
+.homeAbout .homeAboutLeft {
+  flex: 1;
+}
+.homeAbout .homeAboutLeft h3 {
+  color: #1E3A8A;
+  margin-bottom: 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.homeAbout .homeAboutLeft p {
+  color: #475569;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  max-width: 650px;
+}
+.homeAbout .homeAboutAlert {
+  background: #FEE2E2;
+  border-left: 5px solid #EF4444;
+  padding: 22px;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.homeAbout .homeAboutAlert h4 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+.homeAbout .homeAboutAlert a {
+  color: #374151;
+  line-height: 1.8;
+  transition: 0.3s;
+}
+.homeAbout .homeAboutAlert a:hover {
+  color: #2563EB;
+}
+.homeAbout .homeAboutRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.homeAbout .homeAboutCard {
+  flex: 1;
+  min-height: 180px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+}
+.homeAbout .homeAboutCard:hover {
+  transform: translateY(-8px);
+}
+.homeAbout .homeAboutCard h3 {
+  color: #2563EB;
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: normal;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.homeAbout .homeAboutCard p {
+  color: #475569;
+  font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+  .homeAbout .homeAboutWrapper {
+    flex-direction: column;
+  }
+  .homeAbout .homeAboutRight {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .homeAbout {
+    padding: 70px 0;
+  }
+  .homeAbout .homeAboutTitle {
+    margin-bottom: 40px;
+  }
+  .homeAbout .homeAboutWrapper {
+    gap: 35px;
+  }
+  .homeAbout .homeAboutLeft h3 {
+    font-size: 1.6rem;
+  }
+  .homeAbout .homeAboutRight {
+    flex-direction: column;
+  }
+  .homeAbout .homeAboutCard {
+    width: 100%;
+    min-height: 160px;
   }
 }
 .header {
