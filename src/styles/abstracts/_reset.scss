@@ -82,9 +82,6 @@ $container-widths: (
     flex-wrap: wrap;
 }
 
-#main {
-    margin-top: clamp(120px, 8vw, 140px);
-}
 
 
 @mixin generate-cols($prefix: '', $breakpoint: null) {
