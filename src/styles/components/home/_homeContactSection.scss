@@ -1,7 +1,6 @@
 @use "../../mixins/mixin" as *;
 
 .homeContact {
-
     padding: 100px 0;
     background: #f8fbff;
 
@@ -9,127 +8,146 @@
         text-align: center;
         color: #111827;
         margin-bottom: 50px;
-        @include text(clamp(2rem, 4vw, 3rem),
-            700);
-
+        @include text(clamp(2rem, 4vw, 3rem), 700);
     }
 
     .homeContactForm {
-        max-width: 560px;
+        max-width: 650px;
         margin: 0 auto;
         background: #fff;
-        padding: 30px;
-        border-radius: 14px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
-
+        padding: 35px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     .homeContactGroup {
-
         display: flex;
         flex-direction: column;
-        margin-bottom: 25px;
+        margin-bottom: 22px;
 
         label {
-
-            margin-bottom: 10px;
-            color: #111827;
+            margin-bottom: 8px;
+            color: #1f2937;
             @include text(16px, 600);
-
         }
 
         input,
         textarea {
-
             width: 100%;
-            border: 1px solid #d9d9d9;
+            padding: 14px 18px;
+            border: 1px solid #d1d5db;
             border-radius: 8px;
-            padding: 14px 16px;
             outline: none;
+            background: #fff;
             resize: none;
-            transition: .3s;
+            transition: 0.3s;
             @include text(15px, 400);
 
-            &:focus {
-
-                border-color: #2563eb;
-                box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
-
+            &::placeholder {
+                color: #9ca3af;
             }
 
+            &:focus {
+                border-color: #2563eb;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            }
         }
 
         textarea {
-
-            min-height: 150px;
-
+            min-height: 180px;
         }
 
+        .error {
+            margin-top: 6px;
+            color: #dc2626;
+            @include text(14px, 500);
+        }
     }
 
     .homeContactButton {
         width: 100%;
+        padding: 15px;
         border: none;
+        border-radius: 8px;
         background: #2563eb;
         color: #fff;
-        padding: 15px;
-        border-radius: 8px;
         cursor: pointer;
+        transition: 0.3s;
         @include text(16px, 600);
 
-        transition: .3s;
-
         &:hover {
-
             background: #1d4ed8;
-
         }
 
+        &:active {
+            transform: scale(0.98);
+        }
     }
+}
 
+
+@include respond(desktop) {
+    .homeContact {
+        padding: 100px 0;
+
+        .homeContactForm {
+            max-width: 650px;
+        }
+    }
 }
 
 
 @include respond(tablet) {
-
     .homeContact {
-
         padding: 80px 0;
 
         .homeContactForm {
-
             max-width: 100%;
-
+            padding: 30px;
         }
-
     }
-
 }
+
 
 @include respond(mobile) {
 
-
     .homeContact {
-
         padding: 60px 0;
 
         .homeContactTitle {
-
             margin-bottom: 35px;
-
         }
 
         .homeContactForm {
-
             padding: 20px;
-
+            border-radius: 12px;
         }
 
         .homeContactGroup {
+            margin-bottom: 18px;
 
-            margin-bottom: 20px;
+            label {
+                @include text(15px, 600);
+            }
 
+            input,
+            textarea {
+                padding: 12px 14px;
+                @include text(14px, 400);
+            }
+
+            textarea {
+                min-height: 150px;
+            }
+
+            .error {
+                @include text(13px, 500);
+            }
         }
 
+        .homeContactButton {
+            padding: 14px;
+            @include text(15px, 600);
+        }
     }
 }
