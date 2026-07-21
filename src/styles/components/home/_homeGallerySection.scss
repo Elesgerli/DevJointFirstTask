@@ -1,0 +1,182 @@
+@use "../../mixins/mixin" as *;
+
+.homeGallery {
+
+    padding: 100px 0;
+    background: #fff;
+
+    .homeGalleryTitle {
+        text-align: center;
+        margin-bottom: 70px;
+        @include text(clamp(2rem, 4vw, 3rem), 700);
+        color: #111827;
+    }
+
+    .homeGalleryWrapper {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 220px;
+        gap: 20px;
+        grid-auto-flow: dense;
+
+    }
+
+    .homeGalleryCard {
+
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+        cursor: pointer;
+
+        img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+
+        }
+
+        &:hover {
+
+            img {
+                transform: scale(1.08);
+
+            }
+
+            .homeGalleryOverlay {
+                opacity: 1;
+
+            }
+
+        }
+
+    }
+
+    .homeGalleryOverlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent,
+                rgba(0, 0, 0, .65));
+        display: flex;
+        align-items: flex-end;
+        padding: 25px;
+        opacity: 0;
+        transition: .35s;
+
+        h3 {
+
+            color: white;
+            @include text(24px, 600);
+
+        }
+
+    }
+
+}
+
+
+.homeGalleryCard:nth-child(5n+1) {
+    grid-column: span 2;
+    grid-row: span 2;
+
+}
+
+
+.homeGalleryCard:nth-child(5n+2) {
+    grid-column: span 1;
+    grid-row: span 2;
+
+}
+
+
+.homeGalleryCard:nth-child(5n+3) {
+    grid-column: span 1;
+    grid-row: span 1;
+
+}
+
+
+.homeGalleryCard:nth-child(5n+4) {
+    grid-column: span 1;
+    grid-row: span 1;
+
+}
+
+
+.homeGalleryCard:nth-child(5n) {
+    grid-column: span 1;
+    grid-row: span 2;
+
+}
+
+
+@include respond(desktop) {
+
+    .homeGallery {
+
+        .homeGalleryWrapper {
+            grid-auto-rows: 240px;
+
+        }
+
+    }
+
+}
+
+
+@include respond(tablet) {
+
+    .homeGallery {
+
+        .homeGalleryWrapper {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 220px;
+
+        }
+
+        .homeGalleryCard {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+
+        }
+
+        .homeGalleryCard:nth-child(3n+1) {
+
+            grid-column: span 2 !important;
+
+        }
+
+    }
+
+}
+
+
+@include respond(mobile) {
+
+
+    .homeGallery {
+
+        padding: 70px 0;
+
+        .homeGalleryTitle {
+
+            margin-bottom: 45px;
+
+        }
+
+        .homeGalleryWrapper {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 250px;
+        }
+
+        .homeGalleryCard {
+            grid-column: span 2 !important;
+            grid-row: span 1 !important;
+
+        }
+
+    }
+
+}
