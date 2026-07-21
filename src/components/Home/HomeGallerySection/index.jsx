@@ -1,6 +1,6 @@
-import image1 from "../assets/images1.jpg";
-import image2 from "../assets/images2.jpg";
-import image3 from "../assets/images3.jpg";
+import image1 from "/src/assets/images1.jpg";
+import image2 from "/src/assets/images2.jpg";
+import image3 from "/src/assets/images3.jpg";
 
 const HomeGallerySection = () => {
  const galleryData = [
