@@ -14,6 +14,19 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
   }, [isMenuOpen]);
 
   return (
@@ -25,6 +38,7 @@ const Header = () => {
           </a>
 
           <nav
+            id="primary-navigation"
             className={`headerNav ${isMenuOpen ? "active" : ""}`}
             aria-label="Main Navigation"
           >
@@ -54,6 +68,7 @@ const Header = () => {
           <button
             className="headerMenu"
             onClick={toggleMenu}
+            aria-controls="primary-navigation"
             aria-label="Toggle Navigation"
             aria-expanded={isMenuOpen}
           >

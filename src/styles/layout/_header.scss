@@ -20,7 +20,7 @@
     text-decoration: none;
 
     color: #2563eb;
-  
+
   }
 
   .headerNav {
@@ -74,8 +74,7 @@
     display: none;
   }
 
-
-  @media (max-width: 1023px) {
+  @include respond(desktop) {
 
     .headerMenu {
       display: flex;
@@ -126,6 +125,7 @@
             font-size: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #ececec;
+
             &::after {
               display: none;
             }
@@ -144,7 +144,8 @@
 
   }
 
-  @media (max-width:576px) {
+
+  @include respond(mobile) {
 
     .headerWrapper {
       height: 70px;
@@ -158,6 +159,7 @@
       width: 260px;
       right: -280px;
       padding: 90px 25px;
+
       .headerNavList {
         gap: 28px;
 

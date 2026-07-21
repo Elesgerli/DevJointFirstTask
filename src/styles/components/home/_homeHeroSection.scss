@@ -1,79 +1,32 @@
-@use "../../mixins/mixin" as *;
+@use "../mixins/mixin" as *;
 
-.homeHero {
-    padding-top: 80px;
+.footer {
+    background: #070b14;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, .05);
 
-    width: 100%;
-    min-height: calc(100vh - 80px);
-    background: linear-gradient(180deg,
-            #eef5ff 0%,
-            #f7fbff 100%);
-    @include flex;
-
-    .homeHeroWrapper {
-        width: 100%;
+    .footerWrapper {
         @include flex;
         text-align: center;
 
     }
 
-    .homeHeroContent {
-        max-width: 950px;
-        @include flex;
-        flex-direction: column;
-        gap: 24px;
-
-        h1 {
-
-            @include text(clamp(2.2rem, 5vw, 4.4rem),
-                700,
-                1.2);
-            color: #111827;
-
-        }
-
-        p {
-
-            max-width: 650px;
-            margin: 0 auto;
-            @include text(clamp(1rem, 2vw, 1.25rem),
-                400,
-                1.8);
-
-            color: #4B5563;
-
-        }
-
-        .homeHeroBtn {
-            margin-top: 10px;
-            padding: 16px 38px;
-            background: #2563EB;
-            color: white;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: .3s;
-
-            &:hover {
-                background: #1D4ED8;
-                transform: translateY(-3px);
-            }
-
-        }
+    .footerCopyright {
+        color: #8b949e;
+        @include text(18px, 400, 1.6);
 
     }
 
 }
 
-
 @include respond(desktop) {
 
-    .homeHero {
+    .footer {
 
-        min-height: calc(100vh - 80px);
+        padding: 45px 0;
+        .footerCopyright {
 
-        .homeHeroContent {
-
-            gap: 35px;
+            @include text(18px, 400);
 
         }
 
@@ -83,51 +36,35 @@
 
 
 @include respond(tablet) {
+    .footer {
+        padding: 35px 0;
 
-    .homeHero {
+        .footerCopyright {
 
-        padding: 60px 0;
-
-        .homeHeroContent {
-
-            gap: 30px;
-
-            .homeHeroBtn {
-
-                padding: 18px 42px;
-
-            }
+            @include text(16px, 400);
 
         }
 
     }
 
 }
-
 
 
 @include respond(mobile) {
-    .homeHero {
-        padding: 60px 0;
-        min-height: calc(100vh - 70px);
 
-        .homeHeroContent {
-            gap: 18px;
 
-            h1 {
-                line-height: 1.3;
-            }
+    .footer {
 
-            p {
-                line-height: 1.7;
-            }
+        padding: 30px 0;
 
-            .homeHeroBtn {
-                width: 100%;
-                max-width: 240px;
-                margin-inline: auto;
-                padding: 15px;
-            }
+        .footerCopyright {
+
+            @include text(14px, 400);
+
+            padding-inline: 15px;
+
         }
+
     }
-}
+
+}a
